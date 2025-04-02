@@ -1,4 +1,4 @@
-# SpaceX Mission List - COMP3133 Lab Test 2
+# SpaceX API - COMP3133 Lab Test 2
 
 ## 📌 Project Overview
 This is an Angular project developed as part of **COMP3133 Lab Test 2**. The application fetches and displays a list of past SpaceX missions using the SpaceX API.
