@@ -39,20 +39,3 @@ Ensure `app-missionlist` is correctly recognized by checking:
 **Kalp Senghani**  
 **Student ID:** 101418595  
 **Course:** Advanced Diploma in Computer Programming and Analysis, George Brown College
-
----
-### 📌 Notes
-If you encounter the error `NG8001: 'app-missionlist' is not a known element`, follow these steps:
-1. Ensure `MissionlistComponent` is declared in `app.module.ts`.
-2. Check that the `selector` in `missionlist.component.ts` is `app-missionlist`.
-3. Restart the Angular server using:
-   ```sh
-   ng serve --force
-   ```
-4. If issues persist, clear `node_modules` and reinstall dependencies:
-   ```sh
-   rm -rf node_modules package-lock.json
-   npm install
-   ng serve
-   ```
-
