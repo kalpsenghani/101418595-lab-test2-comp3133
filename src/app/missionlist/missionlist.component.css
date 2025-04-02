@@ -1,0 +1,152 @@
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.mission-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+.mission-header {
+  background-color: #f8f9fa;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-patch {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.mission-title-container {
+  width: 100%;
+  text-align: center;
+}
+
+.mission-title-container mat-card-title {
+  color: #005288;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  display: block;
+}
+
+.mission-title-container mat-card-subtitle {
+  color: #666;
+  margin: 5px 0;
+  font-size: 0.9em;
+  display: block;
+}
+
+.mission-basic-info {
+  flex-grow: 1;
+  padding: 15px;
+}
+
+.launch-year {
+  color: #005288;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.mission-details {
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-size: 0.9em;
+}
+
+.mission-status {
+  padding: 0 15px 15px;
+}
+
+.chips-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chips-container mat-chip.success {
+  background-color: #28a745;
+  color: white;
+}
+
+.chips-container mat-chip.failed {
+  background-color: #dc3545;
+  color: white;
+}
+
+.card-footer {
+  padding: 0 15px 15px;
+  margin-top: auto;
+}
+
+.view-details-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #005288;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.view-details-btn:hover {
+  background-color: #003d66;
+}
+
+.mission-details-expanded {
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+}
+
+.details-section {
+  margin-bottom: 15px;
+}
+
+.details-section h3 {
+  color: #005288;
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+}
+
+.details-section p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.links-grid a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+mat-card-actions {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}

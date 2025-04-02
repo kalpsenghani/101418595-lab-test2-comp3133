@@ -1,0 +1,59 @@
+<div class="missions-grid">
+  <mat-card *ngFor="let mission of missions" class="mission-card">
+    <mat-card-header class="mission-header">
+      <img [src]="mission.links.mission_patch_small" alt="Mission Patch" class="mission-patch">
+      <div class="mission-title-container">
+        <mat-card-title>{{ mission.mission_name }}</mat-card-title>
+        <mat-card-subtitle>Flight #{{ mission.flight_number }}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    
+    <mat-card-content class="mission-basic-info">
+      <p class="launch-year">Launch Year: {{ mission.launch_year }}</p>
+      <p class="mission-details">{{ mission.details || 'No description available' }}</p>
+    </mat-card-content>
+
+    <mat-card-content class="mission-status">
+      <div class="chips-container">
+        <mat-chip [class.success]="mission.launch_success" [class.failed]="!mission.launch_success" selected>
+          <mat-icon>{{ mission.launch_success ? 'check_circle' : 'error' }}</mat-icon>
+          Launch: {{ mission.launch_success ? 'Successful' : 'Failed' }}
+        </mat-chip>
+        <mat-chip [class.success]="mission.rocket.first_stage.cores[0].land_success" [class.failed]="!mission.rocket.first_stage.cores[0].land_success" selected>
+          <mat-icon>{{ mission.rocket.first_stage.cores[0].land_success ? 'check_circle' : 'error' }}</mat-icon>
+          Landing: {{ mission.rocket.first_stage.cores[0].land_success ? 'Successful' : 'Failed' }}
+        </mat-chip>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions class="card-footer">
+      <button mat-raised-button color="primary" (click)="toggleDetails(mission)">
+        {{ mission.showDetails ? 'Hide Details' : 'View Details' }}
+      </button>
+    </mat-card-actions>
+
+    <mat-card-content *ngIf="mission.showDetails" class="mission-details-expanded">
+      <div class="details-section">
+        <h3>Rocket Information</h3>
+        <p><strong>Rocket Name:</strong> {{ mission.rocket.rocket_name }}</p>
+        <p><strong>Rocket Type:</strong> {{ mission.rocket.rocket_type }}</p>
+      </div>
+
+      <div class="details-section">
+        <h3>Links</h3>
+        <div class="links-grid">
+          <a *ngIf="mission.links.article_link" [href]="mission.links.article_link" target="_blank" mat-raised-button color="primary">
+            <mat-icon>article</mat-icon> Article
+          </a>
+          <a *ngIf="mission.links.wikipedia" [href]="mission.links.wikipedia" target="_blank" mat-raised-button color="primary">
+            <mat-icon>public</mat-icon> Wikipedia
+          </a>
+          <a *ngIf="mission.links.video_link" [href]="mission.links.video_link" target="_blank" mat-raised-button color="primary">
+            <mat-icon>play_circle</mat-icon> Video
+          </a>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+  

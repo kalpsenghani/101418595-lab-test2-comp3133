@@ -1,59 +1,58 @@
-# 101418595LabTest2Comp3133
+# SpaceX Mission List - COMP3133 Lab Test 2
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+## 📌 Project Overview
+This is an Angular project developed as part of **COMP3133 Lab Test 2**. The application fetches and displays a list of past SpaceX missions using the SpaceX API.
 
-## Development server
+## 🛠️ Tech Stack
+- **Frontend:** Angular
+- **Backend API:** SpaceX API (https://api.spacexdata.com/v3/launches)
+- **HTTP Client:** Angular `HttpClient`
+- **UI Components:** Custom Angular components
 
-To start a local development server, run:
 
-```bash
+## 🚀 Features
+- Fetches SpaceX mission data from the API
+- Displays mission details in a structured format
+- Uses Angular components for modular design
+
+## 🔧 Setup & Installation
+### 1️⃣ Install Dependencies
+Run the following command to install the required dependencies:
+```sh
+npm install
+```
+
+### 2️⃣ Run the Development Server
+Start the Angular development server with:
+```sh
 ng serve
 ```
+Then, open **http://localhost:4200/** in your browser.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 3️⃣ Verify Component Integration
+Ensure `app-missionlist` is correctly recognized by checking:
+- `missionlist.component.ts` has `selector: 'app-missionlist'`
+- `app.module.ts` declares `MissionlistComponent`
+- `app.component.html` includes `<app-missionlist></app-missionlist>`
 
-## Code scaffolding
+## 📝 Author
+**Kalp Senghani**  
+**Student ID:** 101418595  
+**Course:** Advanced Diploma in Computer Programming and Analysis, George Brown College
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
+### 📌 Notes
+If you encounter the error `NG8001: 'app-missionlist' is not a known element`, follow these steps:
+1. Ensure `MissionlistComponent` is declared in `app.module.ts`.
+2. Check that the `selector` in `missionlist.component.ts` is `app-missionlist`.
+3. Restart the Angular server using:
+   ```sh
+   ng serve --force
+   ```
+4. If issues persist, clear `node_modules` and reinstall dependencies:
+   ```sh
+   rm -rf node_modules package-lock.json
+   npm install
+   ng serve
+   ```
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
